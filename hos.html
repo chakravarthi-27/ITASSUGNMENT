@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHAKRAVARTHI MULTI SPECIALITY HOSPITAL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(logo.png);
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        body.home {
+            background-image: url('logo.png');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        body.about {
+            background-image: url('bgg.avif');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        body.services {
+            background-image: url('bg.jpeg');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        body.doctors {
+            background-image: url('logo.png');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        body.contact {
+            background-image: url('bca.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        header {
+            background-color: #007BFF;
+            img src:'med.gif';
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        main {
+            padding: 2rem;
+            background-color: rgba(0,0,0,0);
+            margin: 1rem;
+            border-radius: 8px;
+        }
+
+        footer {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 0.1rem 0;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label {
+            margin-top: 1rem;
+        }
+
+        form input, form textarea {
+            padding: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        form button {
+            margin-top: 0.050rem;
+            padding: 0.7rem;
+            background-color: #ffa300;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .doctor-info {
+            display: none;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 1rem;
+            margin: 1rem;
+            border-radius: 8px;
+        }
+
+        .doctor-info img {
+            max-width: 100px;
+            border-radius: 50%;
+        }
+
+        .doctor-info.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="med.gif"style="width: 100px; height: 100px;float: left; class="logo-img" alt="Logo">
+        <h1>CHAKRAVARTHI MULTI SPECIALITY HOSPITAL</h1>
+        <nav>
+            <ul>
+                <li><a href="#home" onclick="showPage('home')">Home</a></li>
+                <li><a href="#about" onclick="showPage('about')">About Us</a></li>
+                <li><a href="#services" onclick="showPage('services')">Services</a></li>
+                <li><a href="#doctors" onclick="showPage('doctors')">Doctors</a></li>
+                <li><a href="#contact" onclick="showPage('contact')">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="home" class="page active">
+            <h2>Welcome to Our Hospital</h2>
+            <p>At CHAKRAVARTHI MULTI SPECIALITY HOSPITAL, we are dedicated to providing comprehensive healthcare services with a commitment to excellence and patient care. Our state-of-the-art facility is equipped with the latest medical technology and staffed by a team of highly skilled professionals, ensuring that you receive the highest standard of care.</p>
+            <p>Our Mission :</p>
+            <p>To deliver exceptional healthcare with compassion and respect, promoting health and well-being in the communities we serve.</p>
+            <p>Our Vision :</p>
+            <p>To be the leading healthcare provider recognized for excellence in patient care, medical education, and research.</p>
+        </div>
+        <div id="about" class="page">
+            
+            <p><li>Expert Team: Our multidisciplinary team includes some of the most respected physicians and healthcare professionals in the field.</li></p>
+            <p><li>Advanced Technology: We utilize cutting-edge technology to ensure accurate diagnosis and effective treatment.</li></p>
+            <p><li>Patient-Centered Care: Your health and comfort are our top priorities. We provide personalized care tailored to your specific needs.</li></p>
+            <p><li>Holistic Approach: We focus on overall well-being, combining medical expertise with supportive care.</li></p>
+        </div>
+        <div id="services" class="page">
+            
+            <ul>
+                <p><li>Emergency Care: 24/7 emergency services for immediate medical attention.</li></p>
+                <p><li>Outpatient Services: Comprehensive diagnostic and treatment options.</li></p>
+                <p><li>Inpatient Services: Comfortable and modern facilities for your recovery.</li></p>
+                <p><li>Specialty Clinics: Expertise in cardiology, neurology, orthopedics, and more.</li></p>
+                <p><li>Surgical Services: Advanced surgical procedures with minimally invasive techniques.</li></p>
+                <p><li>Maternity and Pediatric Care: Comprehensive care for mothers and children.</li></p>
+
+            </ul>
+        </div>
+        <div id="doctors" class="page">
+            
+            <ul class="doctor-list">
+                <a href="#" onclick="showDoctorInfo('Ajay Kaul')">Dr. Ajay Kaul - Cardiologist</a><br>
+                <a href="#" onclick="showDoctorInfo('Hitesh Kumar Garg')">Dr. Hitesh Kumar Garg - Neurologist</a><br>
+                <a href="#" onclick="showDoctorInfo('Sudha. B')">Dr. Sudha. B - Pediatrician</a><br>
+                <a href="#" onclick="showDoctorInfo('Yatinder Kharbanda')">Dr. Yatinder Kharbanda - Orthopedic Surgeon</a><br>
+            </ul>
+            <div id="Ajay Kaul" class="doctor-info">
+                <img src="doctor1.jfif" alt="Dr. Ajay Kaul">
+                <h3>Dr. Ajay Kaul - Cardiologist</h3>
+                <p>Dr. Ajay Kaul MBBS, MS (General Surgery), M.Ch (Cardiothoracic Surgery), Fellowship in Heart & Lung transplant, Hannover Medical School, Fellowship in Minimally Invasive Cardiac Surgery, Lipzig Heart Centre, Germany.</p>
+            </div>
+            <div id="Hitesh Kumar Garg" class="doctor-info">
+                <img src="doctor2.jfif" alt="Dr. Hitesh Kumar Garg">
+                <h3>Dr. Hitesh Kumar Garg - Neurologist</h3>
+                <p>Dr. Hitesh Kumar Garg MBBS (AIIMS), MS (Ortho)(KEM, Mumbai), Fellowship in spine surgery (Yale University, USA), Fellowship in Paediatric Spine (Shriners Hospitals for Children, USA), Joint Replacement Fellowship (AIIMS)Post Graduate Programs : MS (Ortho)(KEM Hospital and Seth G S Medical College, Mumbai) Fellowship in Spine Surgery (Yale University, USA), Fellowship in Paediatric Spine (Shriners Hospitals for Children, USA)  & Joint Replacement Fellowship (AIIMS)All India Institute Of Medical Sciences, New Delhi.He has a rich experience of more than 15 years in spine surgery.</p>
+            </div>
+            <div id="Sudha. B" class="doctor-info">
+                <img src="doctor3.jfif" alt="Dr. Sudha. B">
+                <h3>Dr. Sudha. B - Pediatrician</h3>
+                <p>Dr. Sudha. BMBBS, MD (PGIMER), DNB Pediatrics, Fellowship in Neonatology 12 Years Of Experience is a dedicated pediatrician committed to providing the best care for children.</p>
+            </div>
+            <div id="Yatinder Kharbanda" class="doctor-info">
+                <img src="doctor4.jfif" alt="Dr. Yatinder Kharbanda">
+                <h3>Dr. Yatinder Kharbanda - Orthopedic Surgeon</h3>
+                <p>Dr. Yatinder Kharbanda MBBS, Diploma in Orthopaedics, DNB - Orthopedics/Orthopedic Surgery, MS - Orthopaedics Orthopedic surgeon 37 Years Experience Overall(36 years as specialist).</p>
+            </div>
+        </div>
+        <div id="contact" class="page">
+                <form id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Submit</button>
+            </form>  
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 CHAKRAVARTHI MULTI SPECIALITY HOSPITAL</p>
+    </footer>
+    <script>
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+            document.body.className = pageId;
+
+            if (pageId !== 'doctors') {
+                const doctorInfos = document.querySelectorAll('.doctor-info');
+                doctorInfos.forEach(info => {
+                    info.classList.remove('active');
+                });
+            }
+        }
+
+        function showDoctorInfo(doctorName) {
+  // Hide all doctor info divs
+  var doctorInfos = document.getElementsByClassName("doctor-info");
+  for (var i = 0; i < doctorInfos.length; i++) {
+    doctorInfos[i].style.display = "none";
+  }
+
+  // Show the selected doctor's info div
+  var selectedDoctorInfo = document.getElementById(doctorName);
+  if (selectedDoctorInfo) {
+    selectedDoctorInfo.style.display = "block";
+  }
+}
+
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Thank you for choosing CHAKRAVARTHI MULTI SPECIALITY HOSPITAL. We are honored to be your healthcare provider and are committed to your health and well-being!');
+        });
+    </script>
+</body>
+</html>
